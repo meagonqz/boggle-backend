@@ -31,9 +31,6 @@ defmodule BoggleWeb.Endpoint do
     pass: ["*/*"],
     json_decoder: Poison
 
-  plug Absinthe.Plug,
-    schema: BoogleWeb.Schema
-
   plug Plug.MethodOverride
   plug Plug.Head
 

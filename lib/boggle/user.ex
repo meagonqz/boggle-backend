@@ -9,6 +9,10 @@ defmodule Boggle.User do
     timestamps()
   end
 
+  def list_users() do
+    Boggle.Repo.all(Boggle.User)
+  end
+
   @doc false
   def changeset(user, attrs) do
     user

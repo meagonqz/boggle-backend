@@ -9,7 +9,9 @@ defmodule BoggleWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  forward "/api", Absinthe.Plug, schema: BoggleWeb.Schema
+  pipeline :api do
+    plug :accepts, ["json"]
+  end
 
   scope "/", BoggleWeb do
     pipe_through :browser
@@ -17,8 +19,11 @@ defmodule BoggleWeb.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", BoggleWeb do
-  #   pipe_through :api
-  # end
+  scope "/api" do
+    pipe_through :api
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: BoggleWeb.Schema
+
+    forward "/", Absinthe.Plug, schema: BoggleWeb.Schema
+  end
 end
