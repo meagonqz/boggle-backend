@@ -22,6 +22,10 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :boggle, Boggle.Guardian,
+  issuer: "boggle",
+  secret_key: System.get_env("GUARDIAN_SECRET")
+
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
