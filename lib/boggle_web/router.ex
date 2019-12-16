@@ -13,6 +13,7 @@ defmodule BoggleWeb.Router do
   pipeline :api do
     plug :accepts, ["json"]
     plug Boggle.Guardian.AuthPipeline
+    plug Boggle.GraphQL.Context
   end
 
   scope "/", BoggleWeb do

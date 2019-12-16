@@ -20,7 +20,7 @@ defmodule Boggle.MixProject do
   def application do
     [
       mod: {Boggle.Application, []},
-      extra_applications: [:logger, :ueberauth, :ueberauth_google, :runtime_tools]
+      extra_applications: [:logger, :ueberauth, :ueberauth_google, :absinthe_plug, :runtime_tools]
     ]
   end
 

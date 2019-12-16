@@ -70,7 +70,7 @@ config :boggle,
   secure: false
 
 config :cors_plug,
-  origin: ["https://localhost:8080", "https://boggle.herokuapp.com:80"],
+  origin: ["http://localhost:8080", "https://boggle.herokuapp.com:80"],
   max_age: 86400,
   method: ["GET", "POST"]
 
