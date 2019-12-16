@@ -1,9 +1,14 @@
 # Boggle Backend
 
-This API currently allows users to log into Boggle and store their scores.
+This API currently allows users to log into [Boggle](https://github.com/meagonqz/boggle) and store their scores.
 This projects uses Phoenix as a webserver, with Google OAuth for authentication powered by [Guardian](https://github.com/ueberauth/guardian) and graphQL for APIs powered by [Absinthe](https://github.com/absinthe-graphql/absinthe).
 
+# Deployment
+The app is hosted on Heroku using [heroku-buildpack-phoenix-static](https://github.com/gjaldon/heroku-buildpack-phoenix-static) at https://peaceful-hamlet-86580.herokuapp.com
+
 # Local development
+
+## Installing elixir and erlang
 This project uses [asdf](https://github.com/asdf-vm/asdf) to manage versions which are pinned in [.tool-versions](./.tool-versions).
 
 After installing asdf, install the plugins
@@ -14,7 +19,7 @@ asdf plugin-add elixir
 When those have succeeded, run `asdf install` and verify install via `asdf
 current`
 
-# Setting up Phoenix
+## Setting up Phoenix locally
 
 To start the Phoenix server:
 
@@ -33,6 +38,3 @@ To start the Phoenix server:
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 After authenticating at [`localhost:4000/auth/google`](http://localhost:4000/auth/google)  you can explore the available APIs with graphiql at  [`localhost:4000/api/graphql`](http://localhost:4000/api/graphql)
-
-# Deployment
-The app is hosted on Heroku using [heroku-buildpack-phoenix-static](https://github.com/gjaldon/heroku-buildpack-phoenix-static) at https://peaceful-hamlet-86580.herokuapp.com
