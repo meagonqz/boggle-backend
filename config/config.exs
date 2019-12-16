@@ -26,6 +26,20 @@ config :boggle, Boggle.Guardian,
   issuer: "boggle",
   secret_key: System.get_env("GUARDIAN_SECRET")
 
+config :boggle, Boggle.Guardian.AuthPipeline,
+  module: Boggle.Guardian,
+  error_handler: Boggle.Guardian.AuthErrorHandler
+
+# Configure Google OAuth
+config :ueberauth, Ueberauth,
+  providers: [
+    google: {Ueberauth.Strategy.Google, [default_scope: "email"]}
+  ]
+
+config :ueberauth, Ueberauth.Strategy.Google.OAuth,
+  client_id: System.get_env("GOOGLE_CLIENT_ID") || "GOOGLE_CLIENT_ID",
+  client_secret: System.get_env("GOOGLE_CLIENT_SECRET") || "GOOGLE_CLIENT_SECRET"
+
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 

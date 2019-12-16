@@ -20,7 +20,7 @@ defmodule Boggle.MixProject do
   def application do
     [
       mod: {Boggle.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :ueberauth, :runtime_tools]
     ]
   end
 
@@ -35,6 +35,7 @@ defmodule Boggle.MixProject do
     [
       {:absinthe, "~> 1.4"},
       {:absinthe_plug, "~> 1.4"},
+      {:cors_plug, "~> 2.0"},
       {:phoenix, "~> 1.4.11"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
@@ -46,7 +47,8 @@ defmodule Boggle.MixProject do
       {:gettext, "~> 0.11"},
       {:guardian, "~> 2.0"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:ueberauth, "~> 0.6"}
     ]
   end
 

@@ -26,4 +26,10 @@ defmodule BoggleWeb.Router do
 
     forward "/", Absinthe.Plug, schema: BoggleWeb.Schema
   end
+
+  scope "/auth", BoggleWeb do
+    pipe_through :browser
+    get("/:provider", AuthController, :request)
+    get("/:provider/callback", AuthController, :new)
+  end
 end

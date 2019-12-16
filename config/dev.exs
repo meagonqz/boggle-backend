@@ -65,6 +65,15 @@ config :boggle, BoggleWeb.Endpoint,
     ]
   ]
 
+config :boggle,
+  origin: "http://localhost:8080",
+  secure: false
+
+config :cors_plug,
+  origin: ["https://localhost:8080", "https://boggle.herokuapp.com:80"],
+  max_age: 86400,
+  method: ["GET", "POST"]
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 

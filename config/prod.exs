@@ -10,8 +10,16 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :boggle, BoggleWeb.Endpoint,
-  url: [host: "example.com", port: 80],
+  origin: ["https://boggle.herokuapp.com:80"],
+  secure: true,
+  url: [scheme: "https", host: "boggle-backend.herokuapp.com", port: 443],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/cache_manifest.json"
+
+config :cors_plug,
+  origin: ["https://boggle.herokuapp.com:80"],
+  max_age: 86400,
+  method: ["GET", "POST"]
 
 # Do not print debug messages in production
 config :logger, level: :info
