@@ -24,9 +24,11 @@ To start the Phoenix server:
   * If desired, seed your database with `mix run priv/repo/seeds.exs`
   * Install Node.js dependencies with `cd assets && npm install`
   * Set up secrets as env vars for Guardian token encryption and for Google OAuth
-  ** GUARDIAN_SECRET
-  ** GOOGLE_CLIENT_ID
-  ** GOOGLE_CLIENT_SECRET
+    * GUARDIAN_SECRET (can be created using `mix guardian.gen.secret`)
+
+     You must [create a Google App](https://console.developers.google.com/apis/) with OAuth to get these credentials
+    * GOOGLE_CLIENT_ID
+    * GOOGLE_CLIENT_SECRET
   * Start Phoenix endpoint with `mix phx.server`
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
