@@ -55,7 +55,7 @@ defmodule BoggleWeb.AuthController do
         Application.get_env(
           :boggle,
           :origin,
-          "https://mh-boggle-frontend.herokuapp.com"
+          "https://meagonqz.github.io/boggle"
         )
     )
   end
