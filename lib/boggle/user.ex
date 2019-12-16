@@ -22,7 +22,7 @@ defmodule Boggle.User do
   def changeset(%User{} = user, params, _is_admin_or_new = true) do
     user
     |> cast(params, [:first_name, :last_name, :email, :provider, :token, :is_admin])
-    |> validate_required([:first_name, :last_name, :email, :provider, :token, :is_admin])
+    |> validate_required([:email, :provider, :token, :is_admin])
     |> unique_constraint(:email)
   end
 
@@ -30,8 +30,6 @@ defmodule Boggle.User do
     user
     |> cast(params, [:first_name, :last_name])
     |> validate_required([
-      :first_name,
-      :last_name,
       :email,
       :provider,
       :token,

@@ -1,4 +1,4 @@
-defmodule Boggle.AuthController do
+defmodule BoggleWeb.AuthController do
   use BoggleWeb, :controller
 
   plug Ueberauth

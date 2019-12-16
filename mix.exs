@@ -20,7 +20,7 @@ defmodule Boggle.MixProject do
   def application do
     [
       mod: {Boggle.Application, []},
-      extra_applications: [:logger, :ueberauth, :runtime_tools]
+      extra_applications: [:logger, :ueberauth, :ueberauth_google, :runtime_tools]
     ]
   end
 
@@ -48,7 +48,8 @@ defmodule Boggle.MixProject do
       {:guardian, "~> 2.0"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:ueberauth, "~> 0.6"}
+      {:ueberauth, "~> 0.6"},
+      {:ueberauth_google, "~> 0.8"}
     ]
   end
 
