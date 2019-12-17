@@ -37,4 +37,4 @@ To start the Phoenix server:
   * Start Phoenix endpoint with `mix phx.server`
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-After authenticating at [`localhost:4000/auth/google`](http://localhost:4000/auth/google)  you can explore the available APIs with graphiql at  [`localhost:4000/api/graphql`](http://localhost:4000/api/graphql)
+After authenticating at [`localhost:4000/auth/google`](http://localhost:4000/auth/google)  you can explore the available APIs with GraphiQL at  [`localhost:4000/api/graphiql`](http://localhost:4000/api/graphiql)
