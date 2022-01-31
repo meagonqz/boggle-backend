@@ -43,7 +43,13 @@ defmodule BoggleWeb.Endpoint do
     secure: Application.get_env(:boggle, :secure),
     http_only: true,
     key: "_boggle_key",
-    signing_salt: "s9xYzpFN"
+    signing_salt: "s9xYzpFN",
+    # This version of Plug doesn't have same_site
+    same_site: "None",
+    # I didn't see this added to the cookie in Chrome, though the attribute is in the Plug docs
+    # Second Secure is redundant but copying the spec from
+    # https://web.dev/samesite-cookies-explained/
+    extra: "SameSite=None; Secure"
 
   plug BoggleWeb.Router
 end
