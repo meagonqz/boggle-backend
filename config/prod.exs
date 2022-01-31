@@ -10,14 +10,14 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :boggle, BoggleWeb.Endpoint,
-  origin: ["https://meagonqz.github.io/boggle"],
+  origin: ["https://meagonqz.github.io"],
   secure: true,
   url: [scheme: "https", host: "peaceful-hamlet-86580.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 config :cors_plug,
-  origin: ["https://meagonqz.github.io/boggle"],
+  origin: ["https://meagonqz.github.io"],
   max_age: 86400,
   method: ["GET", "POST"]
 
